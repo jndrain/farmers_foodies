@@ -3,13 +3,13 @@ from .models import Course
 
 def index(request):
 	context = {
-		"courses": Course.objects.all()
+		"farmers": farmers.objects.all()
 	}
 	return render(request, "farmfood.html", context)
 
-def create(request):
+def login_Register(request):
 	farmers.objects.create(name = request.POST['name'], description = request.POST['description'])
-	return stuff
+	return 
 
 def destroy(request, id):
 	farmers = farmers.objects.get(id=id)
@@ -18,6 +18,6 @@ def destroy(request, id):
 		return redirect('/')
 	else:
 		context = {
-			"farmer": farmer
+			"farmers": farmers
 		}
-		return render(request, "course/delete.html", context)
+		return render(request, "farmfood/delete.html", context)
