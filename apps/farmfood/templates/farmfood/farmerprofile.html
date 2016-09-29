@@ -5,7 +5,7 @@
 	<title>Username's Profile</title>
 </head>
 <body>
-	<h1>Welcome to {{username}}'s page</h1>
+	<h1>Welcome to {{farmers.id}}'s page</h1>
 	<div class="biography">
 		
 	</div>
@@ -25,15 +25,15 @@
 			</tr>
 		</thead>
 		<tbody>
-				<tr>
-				<td>Food Name</td>	
-				<td>Organic</td>	
-				<td>Natural</td>	
-				<td>Non-GMO verfied</td>	
-				<td>Volume</td>	
-				<td>Remove</td>	
-				</tr>
-			</tr>
+				{% for product in products %}
+					<td>{{product_name}}</td>
+					<td>{{quantity}}</td>
+					<td>{{quality}}</td>
+					<td>{{updated_qty}}</td>
+					<td>{{product_name}}</td>
+					<td><a href="farmfood/update/{{product.id}}">Update</a></td>
+
+	{% endfor %}
 		</tbody>
 	</table>
 </body>

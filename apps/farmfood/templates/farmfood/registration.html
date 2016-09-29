@@ -8,18 +8,9 @@
 	<h1>
 		Registration
 	</h1>
-	<div class="register">
-		<p>First Name<input type="text" name="first_name"></p>
-		<p>Last Name<input type="text" name="last_name"></p>
-		<p>Address<input type="text" name="address"></p>
-		<p>Email<input type="text" name="email"></p>
-		<p>Password<input type="text" name="password"></p>
-		<p>Confirm Password<input type="text" name="confirm"></p>
-	</div>
-	<h1>Login</h1>
-	<div class="login">
-		<p>Email<input type="text" name="email"></p>
-		<p>Password<input type="text" name="password"></p>
-	</div>
+	<form class="RegistrationForm" action="{ url 'index'}" method="POST"></form>
+{% csrf_token %}
+{{RegisterForm.as_p}}
+<input type="submit" value="submit">
 </body>
 </html>

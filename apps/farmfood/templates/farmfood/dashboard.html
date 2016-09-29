@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User Dashboard</title>
+	<!--  need to link CSS here -->
+</head>
+<body>
+	<div class="biography"></div>
+	<input type="submit" name="submit">
+	<div class="map"></div>
+	<form action="/products" method="POST">
+		{% csrf_token %}
+		<input type="text" name="product_name">
+		<input type="text" name="name">
+		<input type="text" name="address">
+		<input type="text" name="quality">
+		<input type="text" name="updated_qty">
+		<input type="submit" name="submit">
+		
+		{% for product in products %}
+					<td>{{product_name}}</td>
+					<td>{{quantity}}</td>
+					<td>{{quality}}</td>
+					<td>{{updated_qty}}</td>
+					<td>{{product_name}}</td>
+					<td><a href="farmfood/update/{{product.id}}">Update</a></td>
+
+	{% endfor %}
+	</form>
+	
+
+	
+</body>
+</html>
