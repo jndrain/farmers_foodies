@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name="index"),
-    url(r'^farmers$', views.create),
-    url(r'^farmers/destroy/(?P<id>\d+)$', views.destroy)
+    url(r'^login$', views.login),
+    url(r'^farmers/update/(?P<id>\d+)$', views.update)
 
 ]

@@ -1,56 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	<link type="text/css" rel="stylesheet" href=""
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Welcome to Farmers to Foodies!</title>
+	<title>Welcome to Foodies to Farmers!</title>
 </head>
-
 <body>
-	<div class="container">
-		<div class="Header">
-			<h1>Welcome to Farmers to Foodies!</h1>
-		</div>
-
-		<div class="row">
-			<div class="central">
-				<div class="col s6"></div>
-					<a class="amber btn-large" href="" name="central"">Central King County</a>		
-			</div>
-			
-
-			<div class="north">
-				<div class="col s6"></div>
-					<a class="green btn-large" href ="" name="north">North King County</a>	
-			</div>
-		</div>			
-		
-
-			<div class="snoqualmie">
-				<div class="row">
-					<a class="cyan lighten-1 btn-large" href="" name="snoqualmie">Snoqualmie Valley</a>	
-			</div>	
-		</div>
-
-		<div class="south">
-			<div class="row">
-				<a class=" lime darken-3 btn-large" href="" name="south">South King County</a>
-			</div>	
-		</div>
-
-
-		<div class="Contact_Us">
-			<a href="" name="support">Support</a>
-			<a href="" name="contact">Contact Us</a>
-			<a href="" name="education">Education</a>
-		</div>
+	<div class="enter_site">
+		<p>Are you a farmer?</p>
+		<a href="farmfood/login" name="login">Login</a>
+		<a href="farmfood/login" name="register">Register</a>
 	</div>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+	<div class="header">
+		<h1>Welcome to Farmers to Foodies!</h1>
+		<h3>Some text about our project and why you should poke around on our site</h3>
+		<h2>List of farms sorted by region:</h2>
+	</div>
+
+	<div class="north">
+		<h3>King County:</h3>
+		{% for farm in farms %}
+			<a href="farmfood/{farm_id}" name="king_county">{{farms.farm.name}}</a>
+		{% endfor %}
+	</div>
+
+
+
+
+
 </body>
 </html>
