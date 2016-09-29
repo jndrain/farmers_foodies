@@ -7,14 +7,14 @@ def index(request):
 	}
 	return render(request, "farmfood.html", context)
 
-def login_Register(request):
+def login(request):
 	farmers.objects.create(name = request.POST['name'], description = request.POST['description'])
-	return 
+	return redirect("farmfood/dashboard")
 
-def destroy(request, id):
+def update(request, id):
 	farmers = farmers.objects.get(id=id)
 	if request.method =='POST':
-		farmer.delete()
+		farmer.objects.update_or_create(blah="blah", blah="blah")
 		return redirect('/')
 	else:
 		context = {
